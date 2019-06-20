@@ -6,17 +6,20 @@
 
 function makePerson(name, age) {
 	// add code here
+var person = {};
+person.name = name;
+person.age = age;
 
-
+return person;
 }
 
 var vicky = makePerson('Vicky', 24);
 
-
+console.log(vicky.name);
+console.log(vicky.age);
 // /********* Uncomment these lines to test your work! *********/
-// console.log(vicky.name); // -> Logs 'Vicky'
-// console.log(vicky.age); // -> Logs 24
-
+// ; // -> Logs 'Vicky'
+//  // -> Logs 24
 
 
 
@@ -29,12 +32,14 @@ var vicky = makePerson('Vicky', 24);
 
 var personStore = {
 	// add code here
-
-
+greet(){
+  console.log("hello");
+  }
 };
 
+personStore.greet();
 // /********* Uncomment this line to test your work! *********/
-// personStore.greet(); // -> Logs 'hello'
+//  // -> Logs 'hello'
 
 
 
@@ -42,25 +47,32 @@ var personStore = {
 
 function personFromPersonStore(name, age) {
 	// add code here
+  var user = Object.create(personStore);
+  user.name = name;
+  user.age = age;
 
-
+  return user;
 }
 
 var sandra = personFromPersonStore('Sandra', 26);
 
-
+console.log(sandra.name)
+sandra.greet();
 // /********* Uncomment these lines to test your work! *********/
-// console.log(sandra.name); // -> Logs 'Sandra'
+// ; // -> Logs 'Sandra'
 // console.log(sandra.age); //-> Logs 26
-// sandra.greet(); //-> Logs 'hello'
+// 
+ //-> Logs 'hello'
 
 
 
 /*** CHALLENGE 3 of 3 ***/
-
+personStore.introduce = function(){
+ return (console.log(`Hi, my name is ${this.name}`));
+}
 // add code here
-
-// sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
+sandra.introduce();
+//  // -> Logs 'Hi, my name is Sandra'
 
 
 
@@ -74,15 +86,16 @@ var sandra = personFromPersonStore('Sandra', 26);
 
 function PersonConstructor() {
 	// add code here
-
-
+  this.greet = function(){
+    console.log("hello");
+  }
 }
 
 
 // /********* Uncomment this line to test your work! *********/
 var simon = new PersonConstructor;
-// simon.greet(); // -> Logs 'hello'
-
+//  // -> Logs 'hello'
+simon.greet();
 
 
 /*** CHALLENGE 2 of 3 ***/

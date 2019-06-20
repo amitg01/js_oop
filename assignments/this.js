@@ -159,7 +159,7 @@ console.log(amit.getUsername())
 
 // [ ] Using Class
 
-class createUser{
+class CreateUser{
     constructor(username,id,password,noOfProject){
         this.username = username;
         this.id = id;
@@ -202,5 +202,5 @@ class createUser{
 
 }
 
-var amit = new createUser("amit",123,"abcd",25)
+var amit = new CreateUser("amit",123,"abcd",25)
 console.log(amit.incrementProject())
